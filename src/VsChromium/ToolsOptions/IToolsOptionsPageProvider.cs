@@ -6,22 +6,27 @@ using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Shell;
 using VsChromium.Package;
 
-namespace VsChromium.ToolsOptions {
-  public interface IToolsOptionsPageProvider {
-    T GetToolsOptionsPage<T>() where T : DialogPage, new();
-  }
-
-  [Export(typeof(IToolsOptionsPageProvider))]
-  public class ToolsOptionsPageProvider : IToolsOptionsPageProvider {
-    private readonly IVisualStudioPackageProvider _visualStudioPackageProvider;
-
-    [ImportingConstructor]
-    public ToolsOptionsPageProvider(IVisualStudioPackageProvider visualStudioPackageProvider) {
-      _visualStudioPackageProvider = visualStudioPackageProvider;
+namespace VsChromium.ToolsOptions
+{
+    public interface IToolsOptionsPageProvider
+    {
+        T GetToolsOptionsPage<T>() where T : DialogPage, new();
     }
 
-    public T GetToolsOptionsPage<T>() where T : DialogPage, new() {
-      return _visualStudioPackageProvider.Package.GetToolsOptionsPage<T>();
+    [Export(typeof(IToolsOptionsPageProvider))]
+    public class ToolsOptionsPageProvider : IToolsOptionsPageProvider
+    {
+        private readonly IVisualStudioPackageProvider _visualStudioPackageProvider;
+
+        [ImportingConstructor]
+        public ToolsOptionsPageProvider(IVisualStudioPackageProvider visualStudioPackageProvider)
+        {
+            _visualStudioPackageProvider = visualStudioPackageProvider;
+        }
+
+        public T GetToolsOptionsPage<T>() where T : DialogPage, new()
+        {
+            return _visualStudioPackageProvider.Package.GetToolsOptionsPage<T>();
+        }
     }
-  }
 }

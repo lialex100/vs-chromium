@@ -9,7 +9,7 @@ namespace VsChromium.Server.NativeInterop {
     public AsciiCompiledTextSearchBndm64(string pattern, NativeMethods.SearchOptions searchOptions)
       : base(NativeMethods.SearchAlgorithmKind.kBndm64, pattern, searchOptions) {
       if (pattern.Length > 64)
-        throw new ArgumentException("Bndm64 algorithm is limited to patterns of 64 characters maximum.", "pattern");
+        throw new ArgumentException("Bndm64 algorithm is limited to patterns of 64 characters maximum.", nameof(pattern));
     }
   }
 }

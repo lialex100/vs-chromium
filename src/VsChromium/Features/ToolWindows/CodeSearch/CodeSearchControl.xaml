@@ -9,6 +9,7 @@
              xmlns:theme="clr-namespace:VsChromium.Views"
              xmlns:toolWindows="clr-namespace:VsChromium.Features.ToolWindows"
              xmlns:codesearch="clr-namespace:VsChromium.Features.ToolWindows.CodeSearch"
+             xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance codesearch:CodeSearchViewModel, IsDesignTimeCreatable=True}"
@@ -381,8 +382,8 @@
                     <Setter TargetName="Expander" Property="UIElement.Visibility" Value="Hidden" />
                   </Trigger>
                   <Trigger Property="TreeViewItem.IsSelected" Value="True">
-                    <Setter TargetName="Bd" Property="Panel.Background" Value="{DynamicResource {x:Static vsfx:VsBrushes.HighlightKey}}" />
-                    <Setter Property="TextElement.Foreground" Value="{DynamicResource {x:Static vsfx:VsBrushes.HighlightTextKey}}" />
+                    <Setter TargetName="Bd" Property="Panel.Background" Value="{DynamicResource {x:Static shell:VsBrushes.HighlightKey}}" />
+                    <Setter Property="TextElement.Foreground" Value="{DynamicResource {x:Static shell:VsBrushes.HighlightTextKey}}" />
                   </Trigger>
                   <MultiTrigger>
                     <MultiTrigger.Conditions>

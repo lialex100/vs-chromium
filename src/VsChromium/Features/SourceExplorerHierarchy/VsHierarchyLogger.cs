@@ -180,8 +180,11 @@ namespace VsChromium.Features.SourceExplorerHierarchy {
       Log("{0}({1}) - {2}", message, unchecked((int)itemid), GetEnumName(propid, VshPropTypes));
     }
 
-    public void LogExecCommand(uint itemid, Guid pguidCmdGroup, uint nCmdId, uint nCmdexecopt) {
-      if (!LogCommandTargetActivity)
+#pragma warning disable RECS0154 // Parameter is never used
+        public void LogExecCommand(uint itemid, Guid pguidCmdGroup, uint nCmdId, uint nCmdexecopt)
+        {
+#pragma warning restore RECS0154 // Parameter is never used
+            if (!LogCommandTargetActivity)
         return;
 
       if (MenuGroupsToSkip.Contains(pguidCmdGroup))

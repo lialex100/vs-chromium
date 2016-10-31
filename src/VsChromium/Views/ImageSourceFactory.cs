@@ -47,13 +47,16 @@ namespace VsChromium.Views {
     }
 
     public ImageSource GetFileExtensionImageSource(string fileExtension) {
-      var list = DefaultIconImageList.Instance;
-      ImageSource source = list.GetImage(fileExtension);
-      if (source == null)
-        source = list.GetImage(".txt");
-      if (source == null)
-        source = GetImageSource("TexTDocument");
-      return source;
+
+            return GetImageSource("TexTDocument");
+
+      //      var list = DefaultIconImageList.Instance;
+      //ImageSource source = list.GetImage(fileExtension);
+      //if (source == null)
+      //  source = list.GetImage(".txt");
+      //if (source == null)
+      //  source = GetImageSource("TexTDocument");
+      //return source;
     }
 
     public Icon GetFileExtensionIcon(string fileExtension) {
