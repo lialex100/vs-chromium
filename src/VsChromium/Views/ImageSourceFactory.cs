@@ -50,16 +50,16 @@ namespace VsChromium.Views {
 
             return GetImageSource("TexTDocument");
 
-      //      var list = DefaultIconImageList.Instance;
-      //ImageSource source = list.GetImage(fileExtension);
-      //if (source == null)
-      //  source = list.GetImage(".txt");
-      //if (source == null)
-      //  source = GetImageSource("TexTDocument");
-      //return source;
-    }
+            //      var list = DefaultIconImageList.Instance;
+            //ImageSource source = list.GetImage(fileExtension);
+            //if (source == null)
+            //  source = list.GetImage(".txt");
+            //if (source == null)
+            //  source = GetImageSource("TexTDocument");
+            //return source;
+        }
 
-    public Icon GetFileExtensionIcon(string fileExtension) {
+        public Icon GetFileExtensionIcon(string fileExtension) {
       const string keyPrefix = "__files__";
       return _icons.GetOrAdd(keyPrefix + fileExtension, name => {
         var image = GetFileExtensionImageSource(fileExtension);
